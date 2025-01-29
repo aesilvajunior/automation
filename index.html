@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma Mensagem Especial</title>
+    <title>Milk shake de cookies hahahahah</title>
     <style>
         body {
             display: flex;
@@ -13,6 +13,7 @@
             background-color: #ffebee;
             font-family: Arial, sans-serif;
             text-align: center;
+            flex-direction: column;
         }
         .container {
             background: white;
@@ -36,22 +37,56 @@
         button:hover {
             background: #c2185b;
         }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #e91e63;
+            transform: rotate(-45deg);
+            top: 40%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background-color: #e91e63;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            left: 25px;
+            top: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Oi gatinha, gosto muito de você 💖</h1>
-        <button onclick="mostrarMensagens()">Agora clique aqui</button>
-        <p class="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Você é a mulher mais linda desse mundo 💕</p>
+        <button onclick="mostrarMensagensEcoracao()">Agora clique aqui</button>
+        <p class="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Você é a mulher mais linda desse mundo! Saudades 💕</p>
         <p class="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Apenas dizendo isso de uma forma besta para deixar seu dia mais leve, beijinhos 😘</p>
     </div>
 
     <script>
-        function mostrarMensagens() {
+        function mostrarMensagensEcoracao() {
             let mensagens = document.getElementsByClassName("mensagem");
             for (let i = 0; i < mensagens.length; i++) {
                 mensagens[i].style.display = "block";
             }
+            criarCoracao();
+        }
+
+        function criarCoracao() {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            document.body.appendChild(heart);
         }
     </script>
 </body>
