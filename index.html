@@ -40,15 +40,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Eu gosto muito de você 💖</h1>
-        <p>Queria apenas dizer isso de uma forma especial hahahah</p>
-        <button onclick="mostrarMensagem()">Agora clique aqui</button>
-        <p id="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Você é a mulher mais linda desse mundo 💕</p>
+        <h1>Oi gatinha, gosto muito de você 💖</h1>
+        <button onclick="mostrarMensagens()">Agora clique aqui</button>
+        <p class="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Você é a mulher mais linda desse mundo 💕</p>
+        <p class="mensagem" style="display: none; color: #e91e63; font-weight: bold; margin-top: 10px;">Apenas dizendo isso de uma forma besta para deixar seu dia mais leve, beijinhos 😘</p>
     </div>
 
     <script>
-        function mostrarMensagem() {
-            document.getElementById("mensagem").style.display = "block";
+        function mostrarMensagens() {
+            let mensagens = document.getElementsByClassName("mensagem");
+            for (let i = 0; i < mensagens.length; i++) {
+                mensagens[i].style.display = "block";
+            }
         }
     </script>
 </body>
